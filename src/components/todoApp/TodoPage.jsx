@@ -28,10 +28,7 @@ const TodoPage = () => {
   };
   const handleTimeChange = (e) => {
     console.log("e: ", e.target)
-    // let time=moment(dayjs(e))
-    // console.log("time", time);
-    //   let millisec=moment().diff(time, "milliseconds")
-    //   console.log("millisec",millisec)
+
     let selectedTime = moment(dayjs(e).toJSON()).format("HH:mm:ss");
     let [hou, min, sec] = selectedTime.split(":");
     console.log("hou, min, sec", hou, min, sec);
@@ -41,12 +38,7 @@ const TodoPage = () => {
     setTaskTime(setTimeout(()=>{
 
     },totalMiliSecs))
-    // let timeOut = setTimeout(() => {
-    //   console.log("abc");
-    // }, 5000);
-    // clearTimeout(timeOut);
-    // inputData.taskTimeOut = timeOut;
-    // console.log("timeOut", timeOut);
+
 
     setInputData({...inputData, taskTime: totalMiliSecs})
   };
@@ -101,16 +93,13 @@ const TodoPage = () => {
 
   const handleUpdate=()=>{
     let updateData = listData;
-    //The Object.assign() method is used to copy the values and properties from one or more source objects to a target object.
-    //Syntax:-Object.assign(target, ...sources);
+  
 
     let indexOfUpdateItem = updateData.findIndex(x=>x.id == editIndex)
     console.log("indexOfUpdateItem",indexOfUpdateItem);
     updateData.splice(indexOfUpdateItem, 1, inputData)
 
-    // Object.assign(updateData[editIndex], inputData); //using Object assign method, we will be copying input data on edit action to the edit index element in updateData array
-    // setListData([...listData,updateData]); //now assigning the edited data to the listData
-    // setEditClick(false);
+
     setInputData({ title: "", description: "", taskType:"none", taskTime:0, id: Date.now() });
     
     setEditClick(false);
@@ -119,13 +108,7 @@ const TodoPage = () => {
 
   const handleSelect = (e)=>{
     console.log(e.target.value);
-    // setInputData(prev=>{
-    //   prev.taskType = e.target.value
-    //   return prev
-    // })
-    // let inputDataTemp = inputData
-    // inputDataTemp.taskType = e.target.value
-    // setInputData(inputDataTemp)
+  
     setInputData({...inputData, taskType:e.target.value })
   }
 
@@ -160,8 +143,7 @@ const TodoPage = () => {
             {/* Antd timepicker always returns date in string format */}
             <TimePicker
               onChange={handleTimeChange}
-              // value={dayjs((new Date(inputData.taskTime)).toISOString())}
-              // defaultOpenValue={dayjs("00:00:00", "HH:mm:ss")}
+          
             />
 
             <br />
