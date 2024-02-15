@@ -1,0 +1,18 @@
+button{
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: large;
+    cursor: pointer;
+}
+#yellowBtn{
+    background-color: orange;
+}
+#greenBtn{
+    background-color: green;
+}
+#redBtn{
+    background-color: red;
+}
